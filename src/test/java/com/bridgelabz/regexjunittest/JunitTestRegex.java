@@ -126,6 +126,19 @@ public void givenEmail_WhenShort_ShouldReturnFalse() {
     
 }
 
+@Test
+public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userPhoneNo("917856342311");
+    Assert.assertTrue( isValid);
+}
+@Test
+	public void givenPhoneNo_WhenShort_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userPhoneNo("91343656");
+	    Assert.assertFalse(isValid);
+	    
+	}
 
 
 }
