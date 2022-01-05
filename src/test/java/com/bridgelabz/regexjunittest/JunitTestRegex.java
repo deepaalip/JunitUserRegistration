@@ -139,6 +139,17 @@ public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
 	    Assert.assertFalse(isValid);
 	    
 	}
-
+public void givenPassword_WhenProper_ShouldReturnTrue() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userPassword("Password@123");
+    Assert.assertTrue( isValid);
+}
+@Test
+public void givenPassword_WhenShort_ShouldReturnFalse() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userPassword("Pa@34");
+	Assert.assertFalse(isValid);
+    
+}
 
 }
