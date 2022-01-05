@@ -15,6 +15,20 @@ public class JunitTestRegex {
 	    Assert.assertTrue( isValid);
 	}
   @Test
+	public void givenFirstName_WhenHappy_ShouldReturnTrue() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userFirstName("Deepali");
+	    Assert.assertTrue( isValid);
+	}
+  
+  @Test
+	public void givenFirstName_WhenSad_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userFirstName("deepali");
+	    Assert.assertFalse(isValid);
+	    
+	}
+  @Test
  	public void givenFirstName_WhenFirstLetterSmall_ShouldReturnFalse() {
  		UserRegistration user = new UserRegistration();
  		boolean isValid = user.userFirstName("deepali");
@@ -54,6 +68,20 @@ public class JunitTestRegex {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userLastName("Patil");
 		Assert.assertTrue( isValid);
+	}
+  @Test
+	public void givenLastName_WhenHappy_ShouldReturnTrue() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userLastName("Patil");
+	    Assert.assertTrue( isValid);
+	}
+
+@Test
+	public void givenLastName_WhenSad_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userLastName("patil");
+	    Assert.assertFalse(isValid);
+	    
 	}
 @Test
 	public void givenLastName_WhenFirstLetterSmall_ShouldReturnFalse() {
@@ -98,6 +126,20 @@ public class JunitTestRegex {
 	    Assert.assertTrue(isValid);
 	}
 @Test
+	public void givenEmail_WhenHappy_ShouldReturnTrue() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userEmail("abc@bl.in");
+	    Assert.assertTrue( isValid);
+	}
+
+@Test
+	public void givenEmail_WhenSad_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userEmail("abcgmail.com");
+	    Assert.assertFalse(isValid);
+	    
+	}
+@Test
 public void givenEmail_WhenEmailWithoutSpecialChar_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
 	boolean isValid = user.userEmail("abcgmail.com");
@@ -133,6 +175,20 @@ public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
     Assert.assertTrue( isValid);
 }
 @Test
+	public void givenPhoneNo_WhenHappy_ShouldReturnTrue() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userPhoneNo("917856342311");
+	    Assert.assertTrue( isValid);
+	}
+
+@Test
+	public void givenPhoneNo_WhenSad_ShouldReturnFalse() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userPhoneNo("91343656");
+	    Assert.assertFalse(isValid);
+	    
+	}
+@Test
 	public void givenPhoneNo_WhenShort_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userPhoneNo("91343656");
@@ -146,9 +202,22 @@ public void givenPassword_WhenOneNumericValue_ShouldReturnTrue() {
     Assert.assertTrue( isValid);
 }
 @Test
+public void givenPassword_WhenHappy_ShouldReturnTrue() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userPassword("passWord@123");
+    Assert.assertTrue( isValid);
+}
+@Test
+public void givenPassword_WhenSad_ShouldReturnFalse() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userPassword("pass12@");
+    Assert.assertFalse(isValid);
+    
+}
+@Test
 public void givenPassword_WhenShort_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPassword("Pass@3");
+	boolean isValid = user.userPassword("pass@3");
 	Assert.assertFalse(isValid);
     
 }
