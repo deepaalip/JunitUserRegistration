@@ -12,82 +12,120 @@ public class JunitTestRegex {
 	public void givenFirstName_WhenProper_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("Deepali");
-	    assertTrue( isValid);
+	    Assert.assertTrue( isValid);
 	}
   @Test
  	public void givenFirstName_WhenFirstLetterSmall_ShouldReturnFalse() {
  		UserRegistration user = new UserRegistration();
  		boolean isValid = user.userFirstName("deepali");
- 	    assertFalse(null,isValid);
+ 	    Assert.assertFalse(isValid);
  	    
  	}
   @Test
 	public void givenFirstName_WhenEmptyString_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("");
-	    assertFalse(isValid);
+	    Assert.assertFalse(isValid);
 	    
 	}
   @Test
 	public void givenFirstName_WhenShort_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("de");
-	    assertFalse(isValid);
+	    Assert.assertFalse(isValid);
 	    
 	}
   @Test
 	public void givenFirstName_WhenHavingNumber_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("Dee67");
-	    assertFalse(isValid);
+	    Assert.assertFalse(isValid);
 	    
 	}
   @Test
 	public void givenFirstName_WhenHavingSpecialChar_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
 		boolean isValid = user.userFirstName("Deep#");
-	    assertFalse(isValid);
+		Assert.assertFalse(isValid);
 	    
 	}
   @Test
 	public void givenLastName_WhenProper_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("Patil");
-	    assertTrue( isValid);
+		boolean isValid = user.userLastName("Patil");
+		Assert.assertTrue( isValid);
 	}
 @Test
 	public void givenLastName_WhenFirstLetterSmall_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("patil");
-	    assertFalse(null,isValid);
+		boolean isValid = user.userLastName("patil");
+		Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenEmptyString_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("");
-	    assertFalse(isValid);
+		boolean isValid = user.userLastName("");
+		Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenShort_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("pa");
-	    assertFalse(isValid);
+		boolean isValid = user.userLastName("pa");
+		Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenHavingNumber_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("Pa35");
-	    assertFalse(isValid);
+		boolean isValid = user.userLastName("Pa35");
+		Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenHavingSpecialChar_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("Pat#il");
-	    assertFalse(isValid);
+		boolean isValid = user.userLastName("Pat#il");
+		Assert.assertFalse(isValid);
 	    
 	}
+
+@Test
+	public void givenEmail_WhenProper_ShouldReturnTrue() {
+		UserRegistration user = new UserRegistration();
+		boolean isValid = user.userEmail("abc@gmail.com");
+	    Assert.assertTrue(isValid);
+	}
+@Test
+public void givenEmail_WhenEmailWithoutSpecialChar_ShouldReturnFalse() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userEmail("abcgmail.com");
+	Assert.assertFalse(isValid);
+    
+}
+@Test
+public void givenEmail_WhenEmailWithoutDotNotation_ShouldReturnFalse() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userEmail("abc@gmailcom");
+	Assert.assertFalse(isValid);
+    
+}
+@Test
+public void givenEmail_WhenEmptyString_ShouldReturnFalse() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userEmail("");
+	Assert.assertFalse(isValid);
+    
+}
+@Test
+public void givenEmail_WhenShort_ShouldReturnFalse() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userEmail("pa");
+	Assert.assertFalse(isValid);
+    
+}
+
+
+
 }
