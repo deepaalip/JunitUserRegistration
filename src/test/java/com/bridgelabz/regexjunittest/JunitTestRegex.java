@@ -140,7 +140,7 @@ public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
 	    
 	}
 @Test
-public void givenPassword_WhenOneUppercaseLetter_ShouldReturnTrue() {
+public void givenPassword_WhenOneNumericValue_ShouldReturnTrue() {
 	UserRegistration user = new UserRegistration();
 	boolean isValid = user.userPassword("passWord@123");
     Assert.assertTrue( isValid);
