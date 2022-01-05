@@ -139,15 +139,23 @@ public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
 	    Assert.assertFalse(isValid);
 	    
 	}
-public void givenPassword_WhenProper_ShouldReturnTrue() {
+@Test
+public void givenPassword_WhenOneUppercaseLetter_ShouldReturnTrue() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPassword("Password@123");
+	boolean isValid = user.userPassword("passWord@123");
     Assert.assertTrue( isValid);
 }
 @Test
 public void givenPassword_WhenShort_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPassword("Pa@34");
+	boolean isValid = user.userPassword("Pass@3");
+	Assert.assertFalse(isValid);
+    
+}
+@Test
+public void givenPassword_WhenNoNumericValue_ShouldReturnFalse() {
+	UserRegistration user = new UserRegistration();
+	boolean isValid = user.userPassword("Paassword");
 	Assert.assertFalse(isValid);
     
 }
