@@ -11,110 +11,110 @@ public class JunitTestRegex {
   @Test
 	public void givenFirstName_WhenProper_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("Deepali");
+		boolean isValid = user.validateFirstName("Deepali");
 	    Assert.assertTrue( isValid);
 	}
   @Test
 	public void givenFirstName_WhenHappy_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("Deepali");
+		boolean isValid = user.validateFirstName("Deepali");
 	    Assert.assertTrue( isValid);
 	}
   
   @Test
 	public void givenFirstName_WhenSad_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("deepali");
+		boolean isValid = user.validateFirstName("deepali");
 	    Assert.assertFalse(isValid);
 	    
 	}
   @Test
  	public void givenFirstName_WhenFirstLetterSmall_ShouldReturnFalse() {
  		UserRegistration user = new UserRegistration();
- 		boolean isValid = user.userFirstName("deepali");
+ 		boolean isValid = user.validateFirstName("deepali");
  	    Assert.assertFalse(isValid);
  	    
  	}
   @Test
 	public void givenFirstName_WhenEmptyString_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("");
+		boolean isValid = user.validateFirstName("");
 	    Assert.assertFalse(isValid);
 	    
 	}
   @Test
 	public void givenFirstName_WhenShort_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("de");
+		boolean isValid = user.validateFirstName("de");
 	    Assert.assertFalse(isValid);
 	    
 	}
   @Test
 	public void givenFirstName_WhenHavingNumber_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("Dee67");
+		boolean isValid = user.validateFirstName("Dee67");
 	    Assert.assertFalse(isValid);
 	    
 	}
   @Test
 	public void givenFirstName_WhenHavingSpecialChar_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userFirstName("Deep#");
+		boolean isValid = user.validateFirstName("Deep#");
 		Assert.assertFalse(isValid);
 	    
 	}
   @Test
 	public void givenLastName_WhenProper_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userLastName("Patil");
+		boolean isValid = user.validateLastName("Patil");
 		Assert.assertTrue( isValid);
 	}
   @Test
 	public void givenLastName_WhenHappy_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userLastName("Patil");
+		boolean isValid = user.validateLastName("Patil");
 	    Assert.assertTrue( isValid);
 	}
 
 @Test
 	public void givenLastName_WhenSad_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userLastName("patil");
+		boolean isValid = user.validateLastName("patil");
 	    Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenFirstLetterSmall_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userLastName("patil");
+		boolean isValid = user.validateLastName("patil");
 		Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenEmptyString_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userLastName("");
+		boolean isValid = user.validateLastName("");
 		Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenShort_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userLastName("pa");
+		boolean isValid = user.validateLastName("pa");
 		Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenHavingNumber_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userLastName("Pa35");
+		boolean isValid = user.validateLastName("Pa35");
 		Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenLastName_WhenHavingSpecialChar_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userLastName("Pat#il");
+		boolean isValid = user.validateLastName("Pat#il");
 		Assert.assertFalse(isValid);
 	    
 	}
@@ -122,48 +122,48 @@ public class JunitTestRegex {
 @Test
 	public void givenEmail_WhenProper_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userEmail("abc@gmail.com");
+		boolean isValid = user.validateEmail("abc@gmail.com");
 	    Assert.assertTrue(isValid);
 	}
 @Test
 	public void givenEmail_WhenHappy_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userEmail("abc@bl.in");
+		boolean isValid = user.validateEmail("abc@bl.in");
 	    Assert.assertTrue( isValid);
 	}
 
 @Test
 	public void givenEmail_WhenSad_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userEmail("abcgmail.com");
+		boolean isValid = user.validateEmail("abcgmail.com");
 	    Assert.assertFalse(isValid);
 	    
 	}
 @Test
 public void givenEmail_WhenEmailWithoutSpecialChar_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userEmail("abcgmail.com");
+	boolean isValid = user.validateEmail("abcgmail.com");
 	Assert.assertFalse(isValid);
     
 }
 @Test
 public void givenEmail_WhenEmailWithoutDotNotation_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userEmail("abc@gmailcom");
+	boolean isValid = user.validateEmail("abc@gmailcom");
 	Assert.assertFalse(isValid);
     
 }
 @Test
 public void givenEmail_WhenEmptyString_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userEmail("");
+	boolean isValid = user.validateEmail("");
 	Assert.assertFalse(isValid);
     
 }
 @Test
 public void givenEmail_WhenShort_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userEmail("pa");
+	boolean isValid = user.validateEmail("pa");
 	Assert.assertFalse(isValid);
     
 }
@@ -171,60 +171,60 @@ public void givenEmail_WhenShort_ShouldReturnFalse() {
 @Test
 public void givenPhoneNo_WhenProper_ShouldReturnTrue() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPhoneNo("917856342311");
+	boolean isValid = user.validatePhoneNumber("917856342311");
     Assert.assertTrue( isValid);
 }
 @Test
 	public void givenPhoneNo_WhenHappy_ShouldReturnTrue() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userPhoneNo("917856342311");
+		boolean isValid = user.validatePhoneNumber("917856342311");
 	    Assert.assertTrue( isValid);
 	}
 
 @Test
 	public void givenPhoneNo_WhenSad_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userPhoneNo("91343656");
+		boolean isValid = user.validatePhoneNumber("91343656");
 	    Assert.assertFalse(isValid);
 	    
 	}
 @Test
 	public void givenPhoneNo_WhenShort_ShouldReturnFalse() {
 		UserRegistration user = new UserRegistration();
-		boolean isValid = user.userPhoneNo("91343656");
+		boolean isValid = user.validatePhoneNumber("91343656");
 	    Assert.assertFalse(isValid);
 	    
 	}
 @Test
 public void givenPassword_WhenOneNumericValue_ShouldReturnTrue() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPassword("passWord@123");
+	boolean isValid = user.validatePhoneNumber("passWord@123");
     Assert.assertTrue( isValid);
 }
 @Test
 public void givenPassword_WhenHappy_ShouldReturnTrue() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPassword("passWord@123");
+	boolean isValid = user.validatePhoneNumber("passWord@123");
     Assert.assertTrue( isValid);
 }
 @Test
 public void givenPassword_WhenSad_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPassword("pass12@");
+	boolean isValid = user.validatePassword("pass12@");
     Assert.assertFalse(isValid);
     
 }
 @Test
 public void givenPassword_WhenShort_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPassword("pass@3");
+	boolean isValid = user.validatePassword("pass@3");
 	Assert.assertFalse(isValid);
     
 }
 @Test
 public void givenPassword_WhenNoNumericValue_ShouldReturnFalse() {
 	UserRegistration user = new UserRegistration();
-	boolean isValid = user.userPassword("Paassword");
+	boolean isValid = user.validatePassword("Paassword");
 	Assert.assertFalse(isValid);
     
 }
